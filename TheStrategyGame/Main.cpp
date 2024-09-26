@@ -81,10 +81,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrecInstance, PSTR szCmdLine,
         vertexProcessing = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
     }
 
+    D3DDISPLAYMODE d3ddm;
+    if (FAILED(d3d9->GetAdapterDisplayMode(D3DADAPTER_DEFAULT, &d3ddm)))
+    {
+        return 0;
+    }
+
+
     D3DPRESENT_PARAMETERS d3dpp;
     d3dpp.BackBufferWidth = WINDOW_WIDTH;
     d3dpp.BackBufferHeight = WINDOW_HEIGHT;
-    d3dpp.BackBufferFormat = D3DFMT_A8R8G8B8; //pixel format
+    d3dpp.BackBufferFormat = d3ddm.Format; //pixel format
     d3dpp.BackBufferCount = 1;
     d3dpp.MultiSampleType = D3DMULTISAMPLE_NONE;
     d3dpp.MultiSampleQuality = 0;
@@ -96,7 +103,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrecInstance, PSTR szCmdLine,
     d3dpp.Flags = 0;
     d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;
     d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
-
+    
 
     IDirect3DDevice9* device = 0;
     HRESULT hr = d3d9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, vertexProcessing, &d3dpp, &device);

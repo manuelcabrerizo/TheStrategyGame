@@ -1,4 +1,4 @@
 ﻿  Main.cpp
-D:\Dev\TheStrategyGame\TheStrategyGame\Main.cpp(244,79): warning C4244: 'argument': conversion from 'double' to 'D3DCOLOR', possible loss of data
-D:\Dev\TheStrategyGame\TheStrategyGame\Main.cpp(264,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+D:\Dev\TheStrategyGame\TheStrategyGame\Main.cpp(253,79): warning C4244: 'argument': conversion from 'double' to 'D3DCOLOR', possible loss of data
+D:\Dev\TheStrategyGame\TheStrategyGame\Main.cpp(273,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
   TheStrategyGame.vcxproj -> D:\Dev\TheStrategyGame\x64\Debug\TheStrategyGame.exe
