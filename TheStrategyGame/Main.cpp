@@ -190,7 +190,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrecInstance, PSTR szCmdLine,
     // Texture
     int width, height, channels;
     unsigned char* data = stbi_load("rainbow.jpg", &width, &height, &channels, 4);
-    if (!data) {
+    if (!data) { 
         return 0;
     }
 
